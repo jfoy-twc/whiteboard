@@ -1,7 +1,7 @@
 whiteboard
 ==========
 
-Next generation Course Management System (CMS) for schools and universities. 
+Next generation Course Management System (CMS) for schools and universities.
 
 
 ###Requirements
@@ -16,7 +16,6 @@ Next generation Course Management System (CMS) for schools and universities.
 1. npm install
 2. npm install -g supervisor
 3. npm install -g grunt-cli
-4. bower install
 ```
 
 ###Build
