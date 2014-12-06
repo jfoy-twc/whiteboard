@@ -1,0 +1,22 @@
+<nav class="navbar navbar-default navbar-fixed-top" role="navigation" ng-controller="AuthCtrl">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/"></a>
+        </div>
+
+        <div class="collapse navbar-collapse navbar-ex1-collapse">
+            <ul class="nav navbar-nav">
+                <li><a href="/" title="">Search</a></li>
+                <li ng-hide="user"><a href="/user/login" title="">Login</a></li>
+                <li ng-show="user"><a href="" ng-click="logout()">Logout</a></li>
+                <li ng-show="user"><a href="/user/{{user.email}}" title="" ng-bind="user.name"></a></li>
+            </ul>
+        </div>
+    </div>
+</nav>

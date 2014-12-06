@@ -1,0 +1,51 @@
+<div class="container container-sm">
+  <h1 class="text-center">Create course</h1>
+
+    <form name="new-course-form" class="form-compact" ng-submit="publish(course)">
+        <div class="form-group">
+          <input ng-model="course.code" name="code" type="text" class="form-control" placeholder="Code" required>
+        </div>
+
+        <div class="form-group">
+          <input ng-model="course.title" name="title" type="text" class="form-control" placeholder="Title" required>
+        </div>
+
+        <div class="checkbox">
+          <label>
+            <input type="checkbox" ng-model="assignPeriod"> <abbr title="If you are going to manage a course with and exisiting course ID then it is approprite to assing a period to the course to avoid dupplocations.">Associate period</abbr>
+          </label>
+        </div>
+
+        <div class="form-group" ng-show="assignPeriod">
+          <div class="row">
+            <div class="col-xs-6">
+              <select ng-model="course.period.season" class="form-control">
+                <option>Spring</option>
+                <option>Summer</option>
+                <option>Autumn</option>
+                <option>Winter</option>
+              </select>
+            </div>
+            <div class="col-xs-6">
+              <select ng-model="course.period.year" class="form-control">
+                <option>2014</option>
+                <option>2015</option>
+                <option>2016</option>
+                <option>2017</option>
+              </select>
+            </div>
+          </div>
+        </div>
+
+        <div class="form-group alert alert-danger" ng-show="errors.form">
+          <label class="control-label">Felmeddelanden</label>
+          <div class="controls" ng-bind="errors.form"></div>
+        </div>
+
+        <div class="form-group">
+          <div class="loading" ng-show="loading"></div>
+          <input type="submit" name="submit-button" class="btn btn-block btn-success btn-lg" ng-hide="loading" value="Publicera">
+        </div>
+
+    </form>
+</div>

@@ -1,0 +1,27 @@
+<div class="container">
+    <form name="search-form">
+        <div class="form-group">
+            <input type="text" name="text" ng-model="search.query" class="form-control" placeholder="Search..." ng-change="search(search)" >
+        </div>
+    </form>
+    
+    <div ng-show="search.query.length">
+	    <div ng-show="courses.length">
+		    <strong>Courses:</strong>
+		    <ul>
+		    	<li ng-repeat="c in courses">
+		    		<a href="/course/{{c.code}}"><h4>{{c.code | uppercase}} - {{c.title}} <small>{{c.period.season}} {{c.period.year}}</small></h4></a>
+		    	</li>
+		    </ul>
+	    </div>
+
+	    <div ng-show="users.length">
+		    <strong>Users:</strong>
+		    <ul>
+		    	<li ng-repeat="u in users">
+		    		<a href="/user/{{u.email}}"><h4>{{u.name}}</h4></a>
+		    	</li>
+		    </ul>
+	    </div>
+    </div>
+</div>

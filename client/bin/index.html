@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html ng-app="wb">
+<head>
+  <base href="/"/>
+  <meta charset="utf-8"/>
+  <meta name="google-site-verification" content=""/>
+  <meta name="fragment" content="!"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no"/>
+  <link href="css/app.css" rel="stylesheet" type="text/css"/>
+  <link rel="shortcut icon" href="image/favicon/favicon.ico">
+  <title ng-bind="'Whiteboard &mdash; ' + title"></title>
+  <meta name="description" content="..." />
+</head>
+
+<body>
+  <div class="growl-container"><div growl></div></div>
+  <div ng-include="'/view/header.html'"></div>
+  <div ng-view></div>
+
+  <!-- Scripts -->
+  <script src="js/ng.upload.shim.js"></script>
+  <script src="js/jquery.min.js"></script>
+  <script src="js/angular.min.js"></script>
+  <script src="js/bootstrap.min.js"></script>
+  <script src="js/app.js"></script>
+  <script src="js/libs.js"></script>
+  
+  
+  <!-- No script -->
+  <noscript class="text-center light-gray">
+    <h1>Oops! JavaScript is disabled.</h1>
+    <p>Please enable JavaScript from the browsers settings. 
+    <a href="http://activatejavascript.org/en/instructions/" target="_blank" title="How to enable JavaScript">See instructions</a>.</p>
+  </noscript>
+
+</body>
+</html>

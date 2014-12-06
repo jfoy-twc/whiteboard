@@ -1,0 +1,44 @@
+<div id="notFoundView" ng-include="'/view/404.html'" style="display:none"></div>
+
+<div class="container" id="userView">
+    
+    <div class="page-header">
+        <img ng-source="user.picture" width="64px">
+        <h1>{{user.name}} <small>{{user.status}}</small></h1>
+        <p ng-bind="user.bio"></p>
+        <ul class="list-unstyled list-inline">
+        	<li><strong>Email:</strong> <a ng-href="mailto:{{user.email}}">{{user.email}}</a></li>
+            <li ng-show="user.phone"><strong>Phone:</strong> <a ng-href="tel:{{user.phone}}">{{user.phone}}</a></li>
+        	<li ng-show="user.homepage"><strong>Homepage:</strong><a ng-href="{{user.homepage}}">{{user.homepage}}</a></li>
+        </ul>
+    </div>
+
+    <h4>Courses <small>{{user.courses.length}} courses</small></h4>
+    <table class="table table-hover">
+        <thead ng-show="user.courses.length">
+            <th width="50px">ID</th>
+            <th>Title</th>
+            <th width="50px">Season</th>
+            <th width="50px">Period</th>
+            <th width="160px">Role</th>
+        </thead>
+        <tbody>
+            <tr ng-repeat="c in user.courses">
+                <td>{{c.code | uppercase}}</td>
+                <td>
+                    <a href="/course/{{c.code}}" title="{{c.managers.length}} managers | {{c.subscribers.length}} subscribers">{{c.title}}</a>
+                </td>
+                <td>{{c.period.season}}</td>
+                <td>{{c.period.year}}</td>
+                <td>
+                    <span ng-if="c.managers.indexOf(user._id) != -1">Manager</span>
+                    <span ng-if="c.author == user._id">Author</span>
+                    <span ng-if="c.subscribers.indexOf(user._id) != -1">Student</span>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="/course/new" class="btn btn-primary btn-block btn-lg">Create a new course</a>  
+    </div>
+</div>

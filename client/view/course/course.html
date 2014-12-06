@@ -1,0 +1,55 @@
+<div id="notFoundView" ng-include="'/view/404.html'" style="display:none"></div>
+<div class="container" id="articleView">
+
+			<ul class="list-unstyled list-inline" ng-show="1 || user && (user._id == course.author._id || course.managers.indexOf(user) != -1)">
+				<li><a ng-href="/course/{{course.code}}/edit" class="btn btn-primary">Edit</a></li>
+				<li>
+					<div class="dropdown">
+					  <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown">
+					    New resource
+					    <span class="caret"></span>
+					  </button>
+					  <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
+					    <li role="presentation"><a role="menuitem" tabindex="-1" href="/course/{{course.code}}/resource/new">Document</a></li>
+					    <li role="presentation"><a role="menuitem" tabindex="-1" href="#">File</a></li>
+					    <li role="presentation"><a role="menuitem" tabindex="-1" href="#">URL</a></li>
+					    <li role="presentation" class="divider"></li>
+					    <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Assignment</a></li>
+					  </ul>
+					</div>
+				<li><a ng-href="/course/{{course.code}}/announce" class="btn btn-primary">Announce</a></li>
+			</ul>
+
+			<h1>{{course.code | uppercase}} - {{course.title}} <small>{{course.period.season}} {{course.period.year}}</small></h1>
+			<div id="frontpage"></div>
+			
+			<div ng-show="course.resources.length">
+				<hr>
+				<ul class="list-unstyled">
+					<li ng-repeat="r in course.resources">
+						<a ng-href="/course/{{course.code}}/resource/{{r._id}}">
+							<h5>{{r.title}}</h5>
+						</a>
+					</li>
+				</ul>
+			</div>
+
+
+			<hr>
+			<div class="row">
+				<div class="col-xs-4 col-md-2">
+					<strong>Author</strong>
+					<ul class="list-unstyled list-inline">
+						<li><a ng-href="/user/{{course.author.email}}">{{course.author.name}}</a></li>
+					</ul>
+				</div>
+				<div class="col-xs-8 col-md-10">
+					<strong>Managers</strong>
+					<ul class="list-unstyled list-inline">
+						<li ng-repeat="manager in course.managers">
+							<a ng-href="/user/{{manager.email}}">{{manager.name}}</a>
+						</li>
+					</ul>	
+				</div>
+			</div>
+</div>

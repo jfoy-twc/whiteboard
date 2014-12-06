@@ -1,0 +1,13 @@
+{
+  "name": "feedback",
+  "homepage": "https://github.com/ivoviz/feedback",
+  "_release": "6cddb701f8",
+  "_resolution": {
+    "type": "branch",
+    "branch": "master",
+    "commit": "6cddb701f82e7227f06754241fbaa3afbc9abfab"
+  },
+  "_source": "https://github.com/ivoviz/feedback.git",
+  "_target": "*",
+  "_originalSource": "https://github.com/ivoviz/feedback.git"
+}

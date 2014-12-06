@@ -1,0 +1,47 @@
+{
+  "name": "whiteboard",
+  "description":"Course Management System",
+  "version": "0.0.1",
+  "author": "Alex Anis",
+  "private": true,
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/alexanis/whiteboard"
+  },
+  "main": "server.js",
+  "engines": {
+    "node": "0.10.x"
+  },
+  "scripts": {
+    "preinstall": [
+      "npm i -g grunt",
+      "npm i -g grunt-supervisor"
+    ],
+    "start": "node server.js",
+    "postinstall": ""
+  },
+  "dependencies": {
+    "async": "~0.9.0",
+    "aws-sdk": "~2.0.0-rc.19",
+    "bcrypt": "^0.8.0",
+    "bower": "1.2.x",
+    "cron": "^1.0.4",
+    "express": "3.4.x",
+    "grunt": "~0.4.5",
+    "grunt-contrib-less": "^1.6.3",
+    "grunt-contrib-uglify": "^0.3.2",
+    "grunt-html2js": "^0.2.4",
+    "grunt-supervisor": "~0.2.4",
+    "mongodb": "*",
+    "mongoose": "*",
+    "mongoose-text-search": "0.0.2",
+    "nodemailer": "~0.6.5",
+    "passport": "^0.2.1",
+    "passport-local": "^1.0.0",
+    "swig": "1.1.x"
+  },
+  "devDependencies": {
+    "grunt-contrib-copy": "^0.5.0",
+    "grunt-contrib-less": "^0.9.0"
+  }
+}

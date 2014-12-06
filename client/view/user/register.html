@@ -1,0 +1,17 @@
+<div class="container container-xs">
+	<form name="register-form" ng-submit="register(u)">
+		<div class="form-group">
+	        <input type="text" class="form-control" name="name" ng-model="u.name" placeholder="Full name" required>
+	    </div>
+	    <div class="form-group">
+	        <input type="email" class="form-control" name="email" ng-model="u.email" placeholder="Email" required>
+	    </div>
+	    <div class="form-group">
+	        <input type="password" class="form-control" name="password" ng-model="u.password" placeholder="Password" required>
+	    </div>
+	    <div class="form-group">
+	        <input type="submit" class="btn btn-success btn-block" value="Register"/>
+	    </div>
+  </form>
+  <a href="/user/login">Login</a>
+</div>

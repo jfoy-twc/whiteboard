@@ -1,0 +1,37 @@
+<div class="container">
+	<h1>New resource</h1>
+    <form name="new-resource-form" class="form-compact" ng-submit="publish(r)">
+        <div class="form-group">
+          <input ng-model="r.title" name="title" type="text" class="form-control" placeholder="Title" required>
+        </div>
+
+  
+        <div class="form-group">
+          <div class="wmd-panel">
+              <div id="wmd-button-bar"></div>
+              <textarea class="wmd-input" id="wmd-input" ng-model="r.body"></textarea>
+          </div>
+      </div>
+
+      <div class="checkbox">
+          <label>
+            <input type="checkbox" ng-model="preview"> Preview
+          </label>
+          <div ng-show="preview">
+            <hr>
+            <div id="wmd-preview" class="wmd-panel wmd-preview"></div>
+          </div>
+        </div>
+        
+
+        <div class="form-group alert alert-danger" ng-show="errors.form">
+          <label class="control-label">Felmeddelanden</label>
+          <div class="controls" ng-bind="errors.form"></div>
+        </div>
+
+        <div class="form-group">
+          <div class="loading" ng-show="loading"></div>
+          <input type="submit" name="submit-button" class="btn btn-block btn-success btn-lg" ng-hide="loading" value="Publicera">
+        </div>
+    </form>
+</div>
